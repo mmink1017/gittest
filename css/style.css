@@ -1,0 +1,9 @@
+body {
+  font-family: "맑은 고딕";
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+h1 {
+  color: #2563eb;
+}
