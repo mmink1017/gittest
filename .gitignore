@@ -1,0 +1,10 @@
+# 설정파일 제외
+.env
+
+# 로그파일 제외
+logs/
+
+.DS_Store
+Thumbs.db
+
+README.md

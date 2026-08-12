@@ -1,16 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인 기능 만들기</title>
+    <title>로그인 화면</title>
   </head>
   <body>
-    <div id="login">
-      <label>아이디</label><input type="text" id="id" /><br />
-      <label>비밀번호</label><input type="password" id="password" /><br />
-      <button>로그인</button>
-      <button>취소</button>
-    </div>
+    <form action="">
+      <filedset>
+        <legend>로그인</legend>
+        <input type="text" name="userId" id="userId" /><br />
+        <input type="password" name="password" id="password" /><br />
+        <input type="submit" value="로그인" />
+        <input type="reset" value="취소" />
+      </filedset>
+    </form>
+    <script>
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.defaultPrevent(); //기본 이벤트 차단
+        const inpusts = document.querySelectorAll("form input");
+        const response = await fetch(
+          "http://teacherdev09.kro.kr:10002/springboot/auth/login.do",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userId: inputs[0].value,
+              password: inputs[1].value,
+            }),
+          },
+        );
+        if (!response.ok) throw new Error("에러");
+        const data = await response.json();
+        if (data.token) sessionStorage.setItem(JSON.stringify(data));
+        else throw new Error("로그인 실패");
+      });
+    </script>
   </body>
 </html>

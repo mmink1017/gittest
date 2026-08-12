@@ -7,3 +7,14 @@ body {
 h1 {
   color: #2563eb;
 }
+.dark {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+.btn {
+  padding: 4px 10px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
