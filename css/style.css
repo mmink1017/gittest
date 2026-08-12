@@ -5,7 +5,7 @@ body {
   padding: 2rem;
 }
 h1 {
-  color: #2563eb;
+  color: red;
 }
 .dark {
   background-color: #1e293b;
@@ -17,4 +17,3 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
 }
-
