@@ -6,7 +6,7 @@
     <title>로그인 화면</title>
   </head>
   <body>
-    <form action="">
+    <form class="form" action="">
       <filedset>
         <legend>로그인</legend>
         <input type="text" name="userId" id="userId" /><br />
@@ -15,8 +15,8 @@
         <input type="reset" value="취소" />
       </filedset>
       <button type="button">회원가입</button>
-      <button type="button">비밀번호 찾기</button>
-      <button type="button">아이디 찾기</button>
+      <button type="button">비밀번호찾기</button>
+      <button type="button">아이디찾기</button>
     </form>
     <script>
       document.querySelector("form").addEventListener("submit", async (e) => {
@@ -41,5 +41,6 @@
         else throw new Error("로그인 실패");
       });
     </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
